@@ -1,0 +1,32 @@
+<div class="back">
+  <div class="container">
+    <div class="hello-div" >
+      <p [hidden]="hideHello">{{ userHello }} {{ username }}, you have successfully logged in!</p>
+    </div>
+
+    <div class="login-div">
+      <h3>Hello App</h3>
+      <label>UserName <br><input type="text" [(ngModel)]="username" id="userInput" [ngClass]="{'error-class' : error === true && username === ''}"></label>
+      <label>Password <br><input type="password" [(ngModel)]="password" id="passwordInput" [ngClass]="{'error-class' : error === true && password === ''}"></label>
+      <div class="error-div">
+        <p [hidden]="!error">Fields cannot be empty</p>
+      </div>
+      <div class="buttons-div">
+        <button (click)="showByeMessage()">Logout</button>
+        <button (click)="showHelloMessage()">Login</button>
+      </div>
+    </div>
+
+    <div class="logout-msg">
+      <p [hidden]="hideBye">Have a great day <br>{{ username }}!</p>
+    </div>
+  </div>
+
+  <footer>
+    <div class="links-div">
+      <a href="https://github.com/Kairuus" target="_blank"><i class="fa-brands fa-github"></i></a>
+      <a href="https://www.linkedin.com/in/victor-muniz-236842267/" target="_blank"><i class="fa-brands fa-linkedin"></i></a>
+    </div>
+  </footer>
+
+</div>
